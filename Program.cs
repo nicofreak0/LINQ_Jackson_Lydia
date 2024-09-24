@@ -11,7 +11,7 @@ namespace LINQ_Jackson_Lydia
             {
                 new Game("Minecraft", 'E', "Action-Adventure"),
                 new Game("Cult of the Lamb", 'T', "Action-Adventure"),
-                new Game("The Stanley Parable", 'NR', "First Person Exploration"),
+                new Game("The Stanley Parable", 'T', "First Person Exploration"),
                 new Game("Superliminal", 'E', "Puzzle"),
                 new Game("Gone Home", 'M', "Adventure"),
                 new Game("Portal", 'T', "Action-Adventure"),
@@ -21,7 +21,9 @@ namespace LINQ_Jackson_Lydia
                 new Game("Badland", 'E', "Action-Adventure"),
             };
 
-            var shortGames = from game in games;
+            var shortGames = from game in games
+                             where game.Title.Length < 9
+                             select $"Game Title: {game.Title.ToUpper()}";
         }
     }
 }
