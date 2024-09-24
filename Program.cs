@@ -24,6 +24,11 @@ namespace LINQ_Jackson_Lydia
             var shortGames = from game in games
                              where game.Title.Length < 9
                              select $"Game Title: {game.Title.ToUpper()}";
+
+            foreach(var game in shortGames)
+            {
+                Console.WriteLine(game);
+            }
         }
     }
 }
